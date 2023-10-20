@@ -33,6 +33,8 @@ router.put("/villes/:codePostal", (req, res) => {
     (postal) => postal.fields.code_postal === codePostal
   );
 
+  console.log(postal);
+
   if (postal) {
     postal.fields.code_postal = updatedData.code_postal;
     res.status(201).json(postal, "Code postal modifié");
